@@ -10,7 +10,7 @@ This repository contains scripts to help you **compile models, upload datasets, 
 Before running the scripts, ensure you have:
 
 - A **registered AIHub account**
-- Python 3.7+ installed
+- Python 3.9+ installed
 - The `qai_hub` Python SDK installed
 - A **trained model** ready for compilation
 - A **dataset** ready for inference
