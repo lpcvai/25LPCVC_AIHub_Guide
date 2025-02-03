@@ -54,6 +54,14 @@ Modify the `compile_model.py` script to:
 
 The script will return a **compiled job ID**—save this for later steps.
 
+**IMPORTANT:**
+In order to submit the compiled model for evaluation, you must share it with the email address `lowpowervision@gmail.com`. To do this, modify the sharing settings in the script:
+```bash
+compile_job.modify_sharing(add_emails=['lowpowervision@gmail.com'])
+```
+
+This will grant the necessary permissions for the evaluation team to access the model. **Sharing with this email is required for submitting your model for evaluation.**
+
 ---
 
 ### **Step 4: Upload Your Dataset**
