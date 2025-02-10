@@ -13,13 +13,13 @@ Before running the scripts, ensure you have:
 - Python 3.9+ installed
 - The `qai_hub` Python SDK installed
 - A **trained model** ready for compilation
-- A **dataset** ready for inference
+- A **dataset** ready for upload
 
 ---
 
 ## Steps to Use
 
-### **Step 1: Register on AIHub**
+### **Step 1: Registration**
 
 1. Go to **[AIHub's official website](https://aihub.qualcomm.com/)**.
 2. Create an account and set up your **API credentials**.
@@ -31,6 +31,9 @@ pip3 install qai-hub
 # Account -> Settings -> API Token.
 qai-hub configure --api_token INSERT_API_TOKEN
 ```
+
+3. Go to **lpcv.ai**, locate **Register** button on homepage.
+4. Register for participating in LPCVC 2025.
 
 ---
 
@@ -54,6 +57,10 @@ Modify the `compile_model.py` script to:
 
 The script will return a **compiled job ID**—save this for later steps.
 
+#### For submission:
+Go to **lpcv.ai**, locate **Submit** on homepage.
+Fill out the correct submission form for your track.
+
 **IMPORTANT:**
 In order to submit the compiled model for evaluation, you must share it with the email address `lowpowervision@gmail.com`. To do this, modify the sharing settings in the script:
 ```bash
@@ -63,6 +70,8 @@ compile_job.modify_sharing(add_emails=['lowpowervision@gmail.com'])
 This will grant the necessary permissions for the evaluation team to access the model. **Sharing with this email is required for submitting your model for evaluation.**
 
 ---
+
+### The following steps are for evaluting/testing your model on AI Hub:
 
 ### **Step 4: Upload Your Dataset**
 
@@ -92,7 +101,7 @@ Modify the `run_inference.py` script to:
 - Set `compiled_id` with your **compiled model ID**.  
 - Set `input_dataset` with your **dataset ID**.  
 
-The script will output inference results.
+The script will submit an inference job.
 
 ---
 
