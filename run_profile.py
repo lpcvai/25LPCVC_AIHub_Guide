@@ -14,7 +14,7 @@ def run_profile(model, device):
 device = qai_hub.Device("Samsung Galaxy S24 (Family)")
 
 # Replace with actual compiled job ID
-compiled_id = ""  # TODO: Set the compiled job ID
+compiled_id = ""  # Set the compiled job ID
 
 # Retrieve the compiled model
 job = qai_hub.get_job(compiled_id)
@@ -29,6 +29,16 @@ while True:
     profile_result = qai_hub.get_job_summaries(limit=1, offset=0)
     if profile_result[0].status.finished:
         execution_time = profile_result[0].estimated_inference_time
-        print(execution_time)
+        print(execution_time / 1000, "(ms)")
+        # execution time is in micro-seconds
         break
     time.sleep(5)
+
+"""
+Example output
+Scheduled profile job (j5q0099mp) successfully. To see the status and results:
+    https://app.aihub.qualcomm.com/jobs/j5q0099mp/
+
+Profiling job submitted with ID: j5q0099mp
+0.417 (ms)
+"""

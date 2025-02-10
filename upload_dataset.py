@@ -3,6 +3,11 @@ import numpy as np
 from PIL import Image
 import qai_hub
 
+"""
+This code uploads the dataset for Track 1.  
+For other tracks, please modify the parameters according to the input specifications.
+"""
+
 def process_image(image_path, target_size=(224, 224)):
     """Loads and processes an image to the required input shape (C, H, W)."""
     image = Image.open(image_path).convert('RGB').resize(target_size)
@@ -26,7 +31,7 @@ input_data = load_images_from_folder(image_folder)
 # Check dataset properties
 if input_data:
     print(f"Processed {len(input_data)} images.")
-    print(f"First image shape: {input_data[0].shape}")  # Should be (1, 3, 224, 224)
+    print(f"First image shape: {input_data[0].shape}")
 
 # Upload dataset
 qai_hub.upload_dataset({"image": input_data})

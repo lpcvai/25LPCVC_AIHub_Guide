@@ -16,7 +16,19 @@ device = qai_hub.Device("Samsung Galaxy S24 (Family)")
 input_shape = (1, 3, 224, 224)
 
 # Construct your model (replace with actual model initialization)
-model = None  # TODO: Replace with the actual model instance
+model = None  # Replace with the actual model instance
+"""
+Example:
+# Construct your own model
+class PreprocessedMobileNetV2(torch.nn.Module):
+    ...
+
+model = PreprocessedMobileNetV2()
+
+or
+
+model = qai_hub.get_model("model_id")
+"""
 
 # Compile the model
 compile_job = compile_model(model, device, input_shape)

@@ -14,8 +14,8 @@ def run_inference(model, device, input_dataset):
 device = qai_hub.Device("Samsung Galaxy S24 (Family)")
 
 # Replace with actual compiled job ID and dataset ID
-compiled_id = ""  # TODO: Set the compiled job ID
-input_dataset = ""  # TODO: Set the dataset ID (refer to upload_dataset.py)
+compiled_id = ""  # Set the compiled job ID
+input_dataset = qai_hub.get_dataset("")  # Set the dataset ID (refer to upload_dataset.py)
 
 # Retrieve the compiled model
 job = qai_hub.get_job(compiled_id)
