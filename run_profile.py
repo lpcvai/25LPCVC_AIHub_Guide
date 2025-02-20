@@ -21,18 +21,9 @@ job = qai_hub.get_job(compiled_id)
 compiled_model = job.get_target_model()
 
 # Run profiling
-profile_id = run_profile(compiled_model, device)
-print(f"Profiling job submitted with ID: {profile_id}")
-
-# Wait for profile to complete
-while True:
-    profile_result = qai_hub.get_job_summaries(limit=1, offset=0)
-    if profile_result[0].status.finished:
-        execution_time = profile_result[0].estimated_inference_time
-        print(execution_time / 1000, "(ms)")
-        # execution time is in micro-seconds
-        break
-    time.sleep(5)
+profile_output = run_profile(compiled_model, device)
+execution_time = profile_output["execution_summary"]["estimated_inference_time"]
+print(execution_time / 1000, "(ms)")
 
 """
 Example output
