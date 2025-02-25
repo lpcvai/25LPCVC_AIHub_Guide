@@ -8,7 +8,7 @@ def run_profile(model, device):
         device=device,
         options="--max_profiler_iterations 20"
     )
-    return profile_job.job_id
+    return profile_job.download_profile()
 
 # TODO: Define target device
 device = qai_hub.Device("Samsung Galaxy S24 (Family)")
