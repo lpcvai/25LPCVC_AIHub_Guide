@@ -38,4 +38,4 @@ compile_job.modify_sharing(add_emails=['lowpowervision@gmail.com'])
 compile_job.set_name(f"{model.model_id}_LPCVC25")
 
 # Output compiled job ID
-print(f"Model compiled successfully with ID {compile_job.job_id}")
+print(f"Model compile job submitted with ID {compile_job.job_id}")
