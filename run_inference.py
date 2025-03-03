@@ -10,8 +10,8 @@ def run_inference(model, device, input_dataset):
     )
     return inference_job.download_output_data()
 
-# Define target device
-device = qai_hub.Device("Samsung Galaxy S24 (Family)")
+# TODO: Set the target device based on your track
+device = qai_hub.Device("")
 
 # Replace with actual compiled job ID and dataset ID
 compiled_id = ""  # Set the compiled job ID

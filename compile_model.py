@@ -9,8 +9,8 @@ def compile_model(model, device, input_shape):
         options="--target_runtime tflite"
     )
 
-# Define target device
-device = qai_hub.Device("Samsung Galaxy S24 (Family)")
+# TODO: Set the target device based on your track
+device = qai_hub.Device("")
 
 # Define input shape
 input_shape = (1, 3, 224, 224)

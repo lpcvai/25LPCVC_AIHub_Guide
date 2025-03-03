@@ -10,8 +10,8 @@ def run_profile(model, device):
     )
     return profile_job.download_profile()
 
-# TODO: Define target device
-device = qai_hub.Device("Samsung Galaxy S24 (Family)")
+# TODO: Set the target device based on your track
+device = qai_hub.Device("")
 
 # TODO: Replace with actual compiled job ID
 compiled_id = ""  # Set the compiled job ID
